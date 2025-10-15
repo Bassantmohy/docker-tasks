@@ -31,14 +31,44 @@ The goal is to enable **service discovery via container names** and avoid **IP c
    docker network create --driver bridge \
    --subnet 192.168.20.0/24 \
    --gateway 192.168.20.1 hr-app-net
+   ```
 
 ![Network Created](https://github.com/Bassantmohy/docker-tasks/blob/main/hr-network/HR-netCreate.png)
+
 
 2.**Inspect the network**
 ```bash
 docker inspect alpine-tester
 docker inspect nginx-server
+```
+![Alpine Inspected]([./alpine-tester.png)](https://github.com/Bassantmohy/docker-tasks/blob/main/hr-network/alpine-tester.png)
 
-![Alpine Inspected](./alpine-tester.png)
+![Nginx Inspected]([./alpine-tester.png)](https://github.com/Bassantmohy/docker-tasks/blob/main/hr-network/nginx-server-inspect.png)
+
+3.**Check the network inside alpine-tester**
+```bash
+ping nginx-server
+```
+![Network Checked]([./alpine-tester.png)](https://github.com/Bassantmohy/docker-tasks/blob/main/hr-network/ping_alpine-nginx-DNS.png)
+
+
+## 🖼️ Network Diagram
+
+```mermaid
+graph LR
+    subgraph HR-App-Network ["Custom Bridge: hr-app-net (192.168.20.0/24)"]
+        A[nginx-server 🧩]:::server
+        B[alpine-tester 🧪]:::client
+    end
+
+    A <--> B
+
+    classDef server fill:#f8c291,stroke:#b33939,stroke-width:2px,color:#000;
+    classDef client fill:#82ccdd,stroke:#3c6382,stroke-width:2px,color:#000;
+
+
+
+
+
 
 
