@@ -33,4 +33,4 @@ The goal is to enable **service discovery via container names** and avoid **IP c
    --gateway 192.168.20.1 hr-app-net
 ```markdown
 ## 🖼️ Screenshots
-![Network Created](hr-network/HR-netCreate.png)
+![Network Created]hr-network/HR-netCreate.png
