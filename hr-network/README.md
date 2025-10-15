@@ -41,15 +41,15 @@ The goal is to enable **service discovery via container names** and avoid **IP c
 docker inspect alpine-tester
 docker inspect nginx-server
 ```
-![Alpine Inspected]([./alpine-tester.png)](https://github.com/Bassantmohy/docker-tasks/blob/main/hr-network/alpine-tester.png)
+![Alpine Inspected](./alpine-tester.png)
 
-![Nginx Inspected]([./alpine-tester.png)](https://github.com/Bassantmohy/docker-tasks/blob/main/hr-network/nginx-server-inspect.png)
+![Nginx Inspected](./nginx-server-inspect.png)
 
 3.**Check the network inside alpine-tester**
 ```bash
 ping nginx-server
 ```
-![Network Checked]([./alpine-tester.png)](https://github.com/Bassantmohy/docker-tasks/blob/main/hr-network/ping_alpine-nginx-DNS.png)
+![Network Checked](./ping_alpine-nginx-DNS)
 
 
 ## 🖼️ Network Diagram
@@ -57,6 +57,7 @@ ping nginx-server
 ```mermaid
 graph LR
     subgraph HR-App-Network ["Custom Bridge: hr-app-net (192.168.20.0/24)"]
+
         A[nginx-server 🧩]:::server
         B[alpine-tester 🧪]:::client
     end
