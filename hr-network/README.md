@@ -32,7 +32,6 @@ The goal is to enable **service discovery via container names** and avoid **IP c
    --subnet 192.168.20.0/24 \
    --gateway 192.168.20.1 hr-app-net
 ```markdown
-## 🖼️ Screenshots
 ![Network Created](https://github.com/Bassantmohy/docker-tasks/blob/main/hr-network/HR-netCreate.png)
 
 
