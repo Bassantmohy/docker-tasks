@@ -31,6 +31,7 @@ docker inspect nginx-lb
 ping backend-db
 ```
 graph TD
+```mermaid
     subgraph Frontend Network (10.1.1.0/24)
         C[client-tester]
         L[nginx-lb]
